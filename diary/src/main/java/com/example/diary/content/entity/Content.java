@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 @Entity
 public class Content{
     //TODO contentId
-    private long contentId;
+    private Long contentId; // repository 에서 사용하기 위해 래퍼클래스 사용, 근데 primary 를 쓰면 어차피 여러모로 불편함.
     //TODO writer
     private String writer;
     //TODO text
