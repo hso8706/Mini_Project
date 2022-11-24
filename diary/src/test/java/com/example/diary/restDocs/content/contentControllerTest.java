@@ -13,5 +13,5 @@ import org.springframework.test.web.servlet.MockMvc;
 @AutoConfigureRestDocs //Spring Rest Docs 자동 구성을 위한 애너테이션
 public class contentControllerTest {
     @Autowired
-    private MockMvc mockMvc; // Mock 객체를 주입 받음. Mock 기능을 사용하기 위해서
+    private MockMvc mockMvc; // Mock 객체를 주입 받음. Mock 기능을 사용하기 위해
 }
