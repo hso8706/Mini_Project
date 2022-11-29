@@ -14,11 +14,11 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Getter
 @Setter
-//@Entity // Id 생성 필수
+@Entity // Id 생성 필수
 public class Content{
     //TODO contentId
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long contentId; // repository 에서 사용하기 위해 래퍼클래스 사용, 근데 primary 를 쓰면 어차피 여러모로 불편함.
     //TODO writer
     private String writer;

@@ -1,0 +1,29 @@
+= 기록 애플리케이션
+:sectnums:
+:toc: left
+:toclevels: 4
+:toc-title: Table of Contents
+:source-highlighter: prettify
+
+Ha Jung Ho <hso8706@gamil.com>
+
+v1.0.0, 2022.11.29
+
+***
+== ContentController
+=== 기록(글) 등록
+.curl-request
+include::{snippets}/post-content/curl-request.adoc[]
+.http-request
+include::{snippets}/post-content/http-request.adoc[]
+.http-response
+include::{snippets}/post-content/http-response.adoc[]
+.httpie-request
+include::{snippets}/post-content/httpie-request.adoc[]
+request-body
+include::{snippets}/post-content/request-body.adoc[]
+response-body
+include::{snippets}/post-content/response-body.adoc[]
+response-fields
+include::{snippets}/post-content/response-fields.adoc[]
+
