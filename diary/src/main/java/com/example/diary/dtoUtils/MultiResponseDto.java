@@ -14,7 +14,7 @@ public class MultiResponseDto<T> {
     public MultiResponseDto(List<T> data, Page page) {
         this.data = data;
         this.pageInfo
-                = new PageInfo(page.getNumber(), page.getSize(), page.getTotalElements(), page.getTotalPages());
+                = new PageInfo(page.getNumber()+1, page.getSize(), page.getTotalElements(), page.getTotalPages());
     }
     //Number : Page 가 상속받는 Slice 의 필드, 현재 페이지 쪽수(slice), 조건: positive
     //Size : Page 가 상속받는 Slice 의 필드, 한 페이지(slice)에 담을 데이터(elements) 수

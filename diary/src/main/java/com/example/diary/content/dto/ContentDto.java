@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import java.time.LocalDateTime;
 
 public class ContentDto {
@@ -15,16 +16,16 @@ public class ContentDto {
     public static class Post{
         //TODO Content(Entity) 객체의 필드를 모두 받아야함.
         //예외 : 자동 생성되는 필드
-        @NotBlank(message = "글쓴이를 반드시 적어주시길 바랍니다.")
+        @NotEmpty(message = "글쓴이를 반드시 적어주시길 바랍니다.")
         private String writer;
-        @NotBlank(message = "텍스트 내용을 반드시 한 자 이상은 적어주시길 바랍니다.")
+        @NotEmpty(message = "텍스트 내용을 반드시 한 자 이상은 적어주시길 바랍니다.")
         private String text;
     }
     @AllArgsConstructor //사용 : Test
     @Getter// 필수
     public static class Patch{
         //TODO 글의 내용만 수정할 수 있게 설정
-        @NotBlank(message = "텍스트 내용을 반드시 한 자 이상은 적어주시길 바랍니다.")
+        @NotEmpty(message = "텍스트 내용을 반드시 한 자 이상은 적어주시길 바랍니다.")
         private String text;
     }
     @Getter// 필수

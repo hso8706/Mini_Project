@@ -70,7 +70,7 @@ public class ContentController {
     public ResponseEntity getAllContents(@RequestParam int page,
                                          @RequestParam int size){
         //TODO 페이지네이션 구현
-        Page<Content> pageContents = contentService.findAllContents(page, size); //쿼리로 제공되는 현재 페이지 쪽수(page)와 해당 페이지에 담길 데이터 갯수(size)로 Page 화 시킴
+        Page<Content> pageContents = contentService.findAllContents(page-1, size); //쿼리로 제공되는 현재 페이지 쪽수(page)와 해당 페이지에 담길 데이터 갯수(size)로 Page 화 시킴
         List<Content> contents = pageContents.getContent(); // getContents : Page 가 상속하는 Slice 의 메서드, Page 를 List 로 변환, Dto 로 바꾸기 위함.
         List<ContentDto.Response> responses = mapper.contentListToContentResponseDtoList(contents);
         return new ResponseEntity(
