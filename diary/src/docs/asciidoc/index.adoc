@@ -22,6 +22,8 @@ include::{snippets}/post-content/http-response.adoc[]
 include::{snippets}/post-content/httpie-request.adoc[]
 request-body
 include::{snippets}/post-content/request-body.adoc[]
+request-fields
+include::{snippets}/post-content/request-fields.adoc[]
 response-body
 include::{snippets}/post-content/response-body.adoc[]
 response-fields

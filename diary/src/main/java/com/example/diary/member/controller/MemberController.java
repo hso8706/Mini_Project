@@ -21,11 +21,11 @@ import java.util.List;
 @RequestMapping("/v1/members")
 @Validated
 @Slf4j
-public class memberController {
+public class MemberController {
     private MemberService memberService;
     private MemberMapper mapper;
 
-    public memberController(MemberService memberService, MemberMapper mapper) {
+    public MemberController(MemberService memberService, MemberMapper mapper) {
         this.memberService = memberService;
         this.mapper = mapper;
     }
