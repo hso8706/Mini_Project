@@ -21,3 +21,12 @@ public class MultiResponseDto<T> {
     //TotalElements : Page 의 필드, Pagination 에 사용되는 전체 데이터(elements) 수
     //TotalPages : Page 의 필드, 전체 Page 수 ( = TotalElements 를 Size 로 나눈 수)
 }
+
+/*
+==Pagination==
+>관련
+-Controller
+-Service
+-Dto
+-Mapper
+ */
