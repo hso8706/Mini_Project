@@ -24,8 +24,9 @@ public class ContentController {
         this.contentService = contentService;
     }
 
-    @PostMapping
-    public ResponseEntity postContent(@RequestBody ContentDto.Post postRequestBody){
+    @PostMapping("/{member-id}")
+    public ResponseEntity postContent(@PathVariable("member-id") long memberId,
+                                      @RequestBody ContentDto.Post postRequestBody){
         //TODO PostDTO to Entity
         Content content = mapper.contentPostToContent(postRequestBody);
         //TODO Entity to Service layer
@@ -34,8 +35,7 @@ public class ContentController {
         ContentDto.Response response = mapper.contentToContentResponse(createContent);
         //TODO return by DataDto(ResponseDto ,HttpMethods)
         return new ResponseEntity(
-                new SingleResponseDto<>(response),
-                HttpStatus.CREATED);
+                new SingleResponseDto<>(response), HttpStatus.CREATED);
     }
 
     @PatchMapping("/{content-id}")
@@ -51,8 +51,7 @@ public class ContentController {
         ContentDto.Response response = mapper.contentToContentResponse(updateContent);
         //TODO return by DataDto(ResponseDto ,HttpMethods)
         return new ResponseEntity(
-                new SingleResponseDto<>(response),
-                HttpStatus.OK);
+                new SingleResponseDto<>(response), HttpStatus.OK);
     }
 
     //TODO contentId가 아닌 게시글 키워드로 조회하는 로직 구현 => Service 로직에서 구현
@@ -62,8 +61,7 @@ public class ContentController {
         ContentDto.Response response = mapper.contentToContentResponse(content);
 
         return new ResponseEntity(
-                new SingleResponseDto<>(response),
-                HttpStatus.OK);
+                new SingleResponseDto<>(response), HttpStatus.OK);
     }
 
     @GetMapping
@@ -74,9 +72,7 @@ public class ContentController {
         List<Content> contents = pageContents.getContent(); // getContents : Page 가 상속하는 Slice 의 메서드, Page 를 List 로 변환, Dto 로 바꾸기 위함.
         List<ContentDto.Response> responses = mapper.contentListToContentResponseDtoList(contents);
         return new ResponseEntity(
-                new MultiResponseDto(responses, pageContents),
-                HttpStatus.OK
-        );
+                new MultiResponseDto(responses, pageContents), HttpStatus.OK);
     }
     @DeleteMapping("/{content-id}")
     public ResponseEntity deleteContent(@PathVariable("content-id") long contentId){

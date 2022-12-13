@@ -70,7 +70,7 @@ public class MemberController {
     //회원 삭제 핸들링 메서드
     @DeleteMapping("/{member-id}")
     public ResponseEntity deleteMember(@Positive @PathVariable("member-id") long memberId){
-        Member responseMember = memberService.deleteMember(memberId);
+        memberService.deleteMember(memberId);
 
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
